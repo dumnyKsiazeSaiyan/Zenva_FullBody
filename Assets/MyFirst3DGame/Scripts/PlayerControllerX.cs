@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody rig;
@@ -11,7 +11,10 @@ public class PlayerControllerX : MonoBehaviour
 
     public bool isGrounded;
 
-    public Vector3 vel; 
+    public Vector3 vel;
+
+    public int score;
+
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -39,7 +42,10 @@ public class PlayerControllerX : MonoBehaviour
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); // Multiply here!
         }
 
-
+        if (transform.position.y <= -5)
+        {
+            GameOver();
+        }
     }
 
 
@@ -52,5 +58,14 @@ public class PlayerControllerX : MonoBehaviour
         
     }
 
+    public void GameOver()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
+    public void AddScore (int amount)
+    {
+        score += amount;
+        //update score 
+    }
 }
