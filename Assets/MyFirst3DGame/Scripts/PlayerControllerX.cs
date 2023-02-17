@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class PlayerControllerX : MonoBehaviour
 {
     private Rigidbody rig;
@@ -13,11 +14,14 @@ public class PlayerControllerX : MonoBehaviour
 
     public Vector3 vel;
 
-    public int score;
+    public int score = 0;
+
+    public TextMeshProUGUI scoreText;
 
     private void Start()
     {
         rig = GetComponent<Rigidbody>();
+        scoreText.text = score.ToString();
     }
 
     void Update()
@@ -66,6 +70,7 @@ public class PlayerControllerX : MonoBehaviour
     public void AddScore (int amount)
     {
         score += amount;
-        //update score 
+
+        scoreText.text = score.ToString();
     }
 }

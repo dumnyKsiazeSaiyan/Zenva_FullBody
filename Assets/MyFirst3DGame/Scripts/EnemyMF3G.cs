@@ -35,7 +35,7 @@ public class EnemyMF3G : MonoBehaviour
             }
         }
 
-        
+         
     }
 
     private void OnTriggerEnter(Collider other)

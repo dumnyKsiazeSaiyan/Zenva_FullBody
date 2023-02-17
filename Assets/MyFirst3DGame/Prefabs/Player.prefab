@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3af2d3526c81c4fbcf6e0edf87d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  jumpForce: 5
+  moveSpeed: 4
+  jumpForce: 7
   isGrounded: 0
   vel: {x: 0, y: 0, z: 0}
   score: 0
